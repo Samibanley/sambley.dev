@@ -1,4 +1,5 @@
 import * as t from 'io-ts';
+import { education } from '../../data/resume';
 
 /* 
     TODO: add resume types and look into DynamoDB free tier. Then use that to build resume.
@@ -63,3 +64,12 @@ const PastExperience = t.type({
 });
 
 export type PastExperience = t.TypeOf<typeof PastExperience>;
+
+const ResumeData =  t.type({
+    general: GeneralInfo,
+    education: t.array(SchoolInfo),
+    techSkills: t.array(t.string),
+    pastExperience: t.array(PastExperience),
+});
+
+export type ResumeData = t.TypeOf<typeof ResumeData>;
