@@ -26,8 +26,10 @@ const Location = t.type({
 type Location = t.TypeOf<typeof Location>;
 
 const GeneralInfo = t.type({
-    fullName: t.string,
+    firstName: t.string,
+    lastName: t.string,
     preferredName: t.string,
+    title: t.string,
     email: t.string,
     summary: t.string,
     linkedInUrl: t.string,
